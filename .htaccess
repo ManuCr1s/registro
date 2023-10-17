@@ -1,0 +1,12 @@
+DirectoryIndex index.php index.php3 messagebrd.pl index.html index.htm perfil.php registro.php registroConvenios.php reportes.php reporteConvenios.php
+
+# Mostrar contenido del directorio
+Options -Indexes
+
+ErrorDocument 404 /resgorepa/error/404.html
+
+ErrorDocument 403 /resgorepa/error/403.html
+
+ErrorDocument 401 /resgorepa/error/401.html
+
+ErrorDocument 500 /resgorepa/error/500.html
