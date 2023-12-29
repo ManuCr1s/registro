@@ -38,7 +38,7 @@ $(document).ready(function(){
                             buttons: "Click por favor",
                           })
                           .then(() => {
-                            window.location.href = 'index.php';
+                            window.location.href = 'registro.php';
                           });
                     }else{
                         swal({
@@ -47,7 +47,7 @@ $(document).ready(function(){
                             icon: "success",
                             button: "Click por favor",
                           }).then(function(){
-                            window.location.href = 'index.php';
+                            window.location.href = 'registro.php';
                           });
                     } 
                     $("#preloader").hide();        

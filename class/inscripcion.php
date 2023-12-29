@@ -141,11 +141,17 @@ class Inscripcion{
         }
     }
     public function datatable(){
-        $fecha = date('Y-m-d');
+        $fecha = date('H');
+        $hora_start = 13;
+        $hora_end = 24;
+        if($hora_now>=1 && $hora_now<=12){
+            $hora_start = 1;
+            $hora_end = 12;
+        }
         $query =    "SELECT id_register as id,CONCAT(pe.nombre,pe.apellidos) as nombre,pe.id_person as dni,re.hora_start as entrada,re.institucion as entidad,of.nombre as oficina, re.hora_end as salida  FROM registers re
                     INNER JOIN offices of ON of.id_oficina = re.id_oficina
                     INNER JOIN person pe ON pe.id_person = re.id_person
-                    WHERE re.fecha = '$fecha'";
+                    WHERE re.fecha = '$fecha' AND re.hora_start BETWEEN '$hora_start' AND '$hora_end'";
         $this->response = $this->connect()->prepare($query);
         $this->response->execute();
         $fila = $this->response->fetchAll(PDO::FETCH_ASSOC);
