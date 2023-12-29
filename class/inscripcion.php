@@ -29,7 +29,7 @@ class Inscripcion{
             $hora_start = 1;
             $hora_end = 12;
         }
-        $query = "select count(*) as numero from registers where fecha = '$fecha' and re.hora_start BETWEEN '$hora_start' AND '$hora_end'";
+        $query = "select count(*) as numero from registers where fecha = '$fecha' and hora_start BETWEEN '$hora_start' AND '$hora_end'";
         $this->response = $this->connect()->prepare($query);
         $this->response->execute();
         $fila = $this->response->fetch(PDO::FETCH_ASSOC);
