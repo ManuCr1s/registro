@@ -140,8 +140,8 @@ class Inscripcion{
             $this->response = null;
         }
     }
-    public function datatable(){
-        $fecha = date('H');
+    public function datatable($hora_now){
+        $fecha = date('Y-m-d');
         $hora_start = 13;
         $hora_end = 24;
         if($hora_now>=1 && $hora_now<=12){
