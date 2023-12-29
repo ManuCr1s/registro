@@ -22,7 +22,14 @@ class Inscripcion{
 
     public function read(){
         $fecha = date('Y-m-d');
-        $query = "select count(*) as numero from registers where fecha = '$fecha'";
+        $hora = date('H');
+        $hora_start = 13;
+        $hora_end = 24;
+        if($hora>=1 && $hora<=12){
+            $hora_start = 1;
+            $hora_end = 12;
+        }
+        $query = "select count(*) as numero from registers where fecha = '$fecha' and re.hora_start BETWEEN '$hora_start' AND '$hora_end'";
         $this->response = $this->connect()->prepare($query);
         $this->response->execute();
         $fila = $this->response->fetch(PDO::FETCH_ASSOC);
