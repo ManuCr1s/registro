@@ -1,5 +1,6 @@
 <?php
 namespace Class;
+date_default_timezone_set('America/Bogota');
 use PDO;
 class Database{
     private $name_database = 'registro';
