@@ -26,10 +26,7 @@
                                     <label for="inputEmail4">Nombres y Apellidos</label>
                                     <input type="text" class="form-control input-form" id="nombre" name="nombre" placeholder="Nombres y Apellidos">
                               </div>
-                              <div class="d-block my-4">
-                                    <label for="inputEmail4">Institucion de Procedencia</label>
-                                    <input type="text" class="form-control input-form" id="procedencia" name="procedencia" placeholder="Institucion Procedencia">
-                              </div>
+                         
                         </div>
                         <div class="form-group col-md-6 pr-5 py-3">
                               <h4>Visita</h4>
@@ -39,14 +36,9 @@
                                        <option value="9999" selected>Seleccione Oficina</option>
                                     </select>
                               </div>
-                             
                               <div class="d-block my-4">
-                                    <label for="inputPassword4">Hora de Entrada</label>
-                                    <input type="time" class="form-control input-form" id="entrada" name="entrada"  placeholder="Edificio">
-                              </div>
-                              <div class="d-block my-4">
-                                    <label for="inputPassword4">Edicio</label>
-                                    <input type="text" class="form-control input-form" id="edificio" value="PLAZUELA MUNICIPAL" disabled>
+                                    <label for="inputEmail4">Institucion de Procedencia</label>
+                                    <input type="text" class="form-control input-form" id="procedencia" name="procedencia" placeholder="Institucion Procedencia">
                               </div>
                         </div>
                      </div>

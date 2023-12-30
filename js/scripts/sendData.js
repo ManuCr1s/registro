@@ -5,10 +5,9 @@ $(function(){
             let     dni = $('#dni'),
                     nombres = $('#nombre'),
                     oficina = $('#oficina'),
-                    start = $('#entrada'),
                     url = routeChange('dates'),
                     campos;
-            campos = validate(dni,nombres,oficina,start);
+            campos = validate(dni,nombres,oficina);
             if(!(campos.status)){
                 swal({
                     title: "Upps ah ocurrido un problema",
@@ -32,7 +31,7 @@ $(function(){
                                 icon: "success",
                                 buttons: "Click por favor",
                              }).then(() => {
-                                window.location.href = 'index.php';
+                                window.location.href = 'registro.php';
                               });
                         }else{
                             swal({
@@ -41,7 +40,7 @@ $(function(){
                                 icon: "warning",
                                 buttons: "Click por favor",
                              }).then(() => {
-                                window.location.href = 'index.php';
+                                window.location.href = 'registro.php';
                               });
                         }
                     }

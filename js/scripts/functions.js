@@ -48,7 +48,7 @@ function count(input,url){
     })
 }
 
-function validate(dni,nombre,oficina,start){
+function validate(dni,nombre,oficina){
     if(!(dni.val().length == 8)) return {'status':false,'message':'Ingrese DNI valido'};
     if((nombre.val().length == 0))return {'status':false, 'message':'Ingrese nombres'};
     if(oficina.val() == 9999)return {'status':false, 'message':'Seleccione Oficina'};
