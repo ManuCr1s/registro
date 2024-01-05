@@ -22,14 +22,14 @@ class Inscripcion{
 
     public function read(){
         $fecha = date('Y-m-d');
-        $hora = date('G');
-        $hora_start = 12;
-        $hora_end = 23;
-        if($hora>=0 && $hora<=11){
-            $hora_start = 0;
-            $hora_end = 11;
+        $hora = date('H');
+        $hora_start = '12';
+        $hora_end = '24';
+        if($hora>='01' && $hora<='11'){
+            $hora_start = '01';
+            $hora_end = '11';
         }
-        $query = "select count(*) as numero from registers where fecha = '$fecha' and DATE_FORMAT(hora_start,'%G') BETWEEN $hora_start AND $hora_end";
+        $query = "select count(*) as numero from registers where fecha = '$fecha' and DATE_FORMAT(hora_start,'%H') BETWEEN $hora_start AND $hora_end";
         $this->response = $this->connect()->prepare($query);
         $this->response->execute();
         $fila = $this->response->fetch(PDO::FETCH_ASSOC);
@@ -149,16 +149,16 @@ class Inscripcion{
     }
     public function datatable($hora_now){
         $fecha = date('Y-m-d');
-        $hora_start = 13;
-        $hora_end = 23;
-        if($hora_now>=0 && $hora_now<=12){
-            $hora_start = 0;
-            $hora_end = 12;
+        $hora_start = '12';
+        $hora_end = '24';
+        if($hora_now>='01' && $hora_now<='11'){
+            $hora_start = '01';
+            $hora_end = '11';
         }
         $query =    "SELECT id_register as id,CONCAT(pe.nombre,' ',pe.apellidos) as nombre,pe.id_person as dni,re.hora_start as entrada,re.institucion as entidad,of.nombre as oficina, re.hora_end as salida  FROM registers re
                     INNER JOIN offices of ON of.id_oficina = re.id_oficina
                     INNER JOIN person pe ON pe.id_person = re.id_person
-                    WHERE re.fecha = '$fecha' AND DATE_FORMAT(re.hora_start,'%G') BETWEEN $hora_start AND $hora_end";
+                    WHERE re.fecha = '$fecha' AND DATE_FORMAT(re.hora_start,'%H') BETWEEN $hora_start AND $hora_end";
         $this->response = $this->connect()->prepare($query);
         $this->response->execute();
         $fila = $this->response->fetchAll(PDO::FETCH_ASSOC);
