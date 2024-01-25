@@ -1,7 +1,8 @@
 <?php
 require_once '../class/inscripcion.php';
 $person = new Inscripcion();
-$datos = $person->time($_POST['time'],$_POST['id']);
+$time_register = date('H:i:s');
+$datos = $person->time($time_register,$_POST['id']);
 if($datos){
     $response = array('status'=>true,'message'=>'Se ah registrado Exitosamente');
 }else{  

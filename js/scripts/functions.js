@@ -68,7 +68,6 @@ function calcular(id){
       .then((willDelete) => {
         if (willDelete) {
             datos = {
-                'time':input.val(),
                 'id':id
             };
             $.ajax({
@@ -76,9 +75,7 @@ function calcular(id){
                 url:routeChange('time'),
                 data:datos,
                 success:function(data){
-                    console.log(data);
                     let myData = $.parseJSON(data);
-                    console.log(myData);
                     if(myData.status){
                         swal(myData.message, {
                             icon: "success",

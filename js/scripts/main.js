@@ -18,8 +18,8 @@ $(document).ready(function(){
                     { 
                         data: 'salida',   
                         render: function(data, type, row) {
-                            if (data == null) {
-                                return '<div class="row"><input type="time" id="'+row.id+'" class="form-control col-md-9"/><button class="btn btn-primary col-md-3" onclick="calcular('+row.id+')">▼</button>';
+                            if (data == null && row.oficina == 'ALCALDÍA') {
+                                return '<button class="btn btn-primary" onclick="calcular('+row.id+')">REGISTRAR</button>';
                             } else {
                                 return data;
                             }

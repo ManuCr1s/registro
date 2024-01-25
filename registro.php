@@ -63,7 +63,7 @@
                                  <th>Hora Ingreso</th>
                                  <th>Institucion</th>
                                  <th>Oficina</th>
-                                 <th>Hora Salida</th>
+                                 <th>Ingreso Alcaldia</th>
                               </tr>
                         </thead>
                         <tbody>
